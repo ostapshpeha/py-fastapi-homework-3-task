@@ -202,7 +202,7 @@ async def login_user(
         )
 
 
-@router.post("/api/v1/accounts/refresh/", response_model=AccessTokenResponseSchema, status_code=status.HTTP_200_OK)
+@router.post("/refresh/", response_model=AccessTokenResponseSchema, status_code=status.HTTP_200_OK)
 async def refresh_access_token(
     payload: RefreshTokenRequestSchema,
     db: AsyncSession = Depends(get_db),
